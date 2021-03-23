@@ -9,9 +9,11 @@
     <div id="app">
       <h1>뷰 라우터 예제</h1>
       <p>
+        <!-- 각 <router-link>는 화면 상에서 “Main컴포넌트로 이동”, “Login컴포넌트로 이동” 이라는 <a>버튼 태그로 변환되어 표시된다. -->
         <router-link to="/main">Main 컴포넌트로 이동</router-link>
         <router-link to="/login">Login 컴포넌트로 이동</router-link>
       </p>
+      <!-- <router-view>는 갱신된 URL에 해당하는 화면을 보여주는 영역으로, 나타낼 화면은 script에서 정의한다. -->
       <router-view></router-view>
     </div>
 
@@ -30,6 +32,7 @@
 
       // 5. 뷰 라우터 정의
       var router = new VueRouter({
+        mode: 'history',
         routes
       });
 
