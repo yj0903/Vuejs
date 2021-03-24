@@ -25,6 +25,8 @@
         template: '<div>두 번째 지역 컴포넌트 : {{ cmp2Data }}</div>',
         data: function() {
           return {
+            // 컴포넌트는 다른 컴포넌트에 접근해서 값을 받아올 수 없다.
+            // 통신을 통해 값을 받아야 함.
             cmp2Data : cmp1.data.cmp1Data
           }
         }

@@ -8,6 +8,8 @@
   <body>
     <div id="app">
       <!-- 팁 : 오른쪽에서 왼쪽으로 속성을 읽으면 더 수월합니다. -->
+      <!--child-component의 내용에 props 속성으로 propsdata를 정의 
+          v-bind: propsdata = ”message”는 상위 컴포넌트의 message 속성값을 하위 컴포넌트의 propsdata로 전달하는 역할.-->
       <child-component v-bind:propsdata="message"></child-component>
     </div>
 

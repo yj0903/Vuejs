@@ -9,22 +9,25 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
     <script>
+      // new Vue()로 뷰 인스턴스 생성.
       new Vue({
+        // 인스턴스 안에 el 속성으로 뷰 인스턴스가 그려질 지점을 지정.
         el: '#app',
+        // data 속성에 message값을 정의하여 화면의 {(message)}에 연결.
         data: {
           message: 'Hello Vue.js!'
         },
         beforeCreate: function() {
-          console.log("beforeCreate");
+          console.log("beforeCreate"); //출력 O
         },
         created: function() {
-          console.log("created");
+          console.log("created"); //출력 O
         },
         mounted: function() {
-          console.log("mounted");
+          console.log("mounted"); //출력 O
         },
         updated: function() {
-          console.log("updated");
+          console.log("updated"); //출력 X : 데이터의 변화가 없어 업데이트 안됨.
         }
       });
     </script>

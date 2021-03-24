@@ -15,17 +15,17 @@
           message: 'Hello Vue.js!'
         },
         beforeCreate: function() {
-          console.log("beforeCreate");
+          console.log("beforeCreate");  //출력 O
         },
         created: function() {
-          console.log("created");
+          console.log("created"); //출력 O
         },
         mounted: function() {
-          console.log("mounted");
-          this.message = 'Hello Vue!';
+          console.log("mounted"); //출력 O
+          this.message = 'Hello Vue!';  // 데이터의 값이 변경되어 업데이트 될 예정.
         },
         updated: function() {
-          console.log("updated");
+          console.log("updated"); //출력 O
         }
       });
     </script>
