@@ -3,16 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vue Components Communication Quiz</title>
+    <title>Sample</title>
   </head>
   <body>
     <div id="app">
-      <!-- 기억이 잘 안나시면 아래 형식을 참고하세요. -->
-      <!-- v-bind:프롭스 속성="상위 컴포넌트 데이터 속성" -->
+      <!-- 자식컴포넌트1 -->
+      <!-- 부모로부터 받은 데이터를 propsdata속성으로 수신 -->
       <child-component v-bind:propsdata="message"></child-component>
-
-      <!-- #할일 3 -->
-      <!-- sibling-component 등록 -->
+      <!-- 자식컴포넌트2 -->
+      <sibling-component v-bind:propsdata="anotherMessage"></sibling-component>
     </div>
 
     <script src="js/vendor/vue.js"></script>
