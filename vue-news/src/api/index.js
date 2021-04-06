@@ -7,9 +7,6 @@ const config = {
 
 // 2. API 함수들을 정리한다
 function fetchNewsList(){
-    // 해당 URL 주소에 대해 HTTP GET 요청을 보낸다. 아래 셋다 가능.
-    // return axios.get('https://api.hnpwa.com/v0/news/1.json');
-    // return axios.get(config.baseURL + 'news/1.json');
     return axios.get(`${config.baseURL}news/1.json`); // 백틱(`), 달러($) ES6 문법    
 }
 function fetchAskList(){

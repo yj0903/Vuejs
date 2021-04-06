@@ -1,35 +1,24 @@
 <template>
   <div>
-    <div v-for="url in URLS">{{url.title}}</div>
+    <p v-for="item in ask">  
+      <a v-bind:href="item.url">
+        {{item.title}}
+      </a>
+      <small>{{item.time_ago}} by {{item.user}}</small>
+    </p>
   </div>
 </template>
 
 <script>
-import { fetchAskList } from '../api/index.js'
-
+import {mapState} from 'vuex'
 export default {
-  data(){
-    return { 
-      //vm으로 연결된 현재 컴포넌트로 부터 데이터를 저장받는다.
-      URLS: [] 
-    }
+  computed:{
+    ...mapState({
+      ask: state => state.ask
+    })
   },
   created(){
-    var vm = this;
-    fetchAskList()
-      .then(
-        //response는 서버에서 보낸 데이터
-        function(response){ 
-          vm.URLS = response.data
-        }
-      )
-      .catch(
-        // 서버와의 통신이 실패
-        function(error) 
-        {
-          console.log(error);
-        }
-      )
+    this.$store.dispatch('FETCH_ASK');
   }
 }
 </script>
