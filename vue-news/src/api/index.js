@@ -16,9 +16,17 @@ function fetchJobsList(){
     return axios.get(`${config.baseURL}jobs/1.json`); // 백틱(`), 달러($) ES6 문법    
 }
 
+function fetchUserInfo(userName){
+    return axios.get(`https://api.hnpwa.com/v0/user/${userName}.json`);
+}
+function fetchItemInfo(itemID){
+    return axios.get(`https://api.hnpwa.com/v0/item/${itemID}.json`);
+}
 // 3. 외부에서 사용가능하도록 export 해놓는다.
 export{
     fetchNewsList,
     fetchAskList,
     fetchJobsList,
+    fetchUserInfo,
+    fetchItemInfo,
 }
